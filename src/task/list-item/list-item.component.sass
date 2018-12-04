@@ -1,0 +1,118 @@
+//=========================================================
+//  TrackCardComponent
+//---------------------------------------------------------
+
+.item-card
+    background: #393939
+    border-radius: 4px
+    overflow: hidden
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12)
+    border-bottom: 1px solid #18191a
+    &__date
+        display: block
+        color: #7d7e7f
+        font-size: rem(13px)
+        overflow: hidden
+        text-decoration: none
+        text-overflow: ellipsis
+        white-space: nowrap
+        word-wrap: normal
+    &__title
+        font-size: rem(15px)
+        font-weight: 400
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+        word-wrap: normal
+
+    &__description
+        font-size: rem(15px)
+        font-weight: 400
+        color: #7d7e7f
+        overflow: hidden
+
+    &__actions
+        display: flex
+        height: 40px
+        color: #5d5e5f
+        fill: #4d4e4f
+        font-size: rem(13px)
+        line-height: 40px
+        justify-content: space-between
+
+    &__hr
+        border-bottom: 1px solid rgba(0,0,0,0.1)
+        height: 9px
+        background: #171819
+
+    .cell
+        display: flex
+        align-items: center
+        .material-icons
+            color: #7d7e7f
+
+        icon, icon-button
+            display: flex
+
+    .btn--icon
+        &:active
+            background: rgba(0, 0, 0, 0.2)
+
+
+        &:hover
+            fill: #78797a
+
+//=====================================
+//  Layout: compact
+//-------------------------------------
+.item-card--compact
+    display: flex
+    flex-direction: column
+    margin-bottom: 30px
+    border-top: 1px solid rgba(255,255,255,.1)
+    border-bottom: 1px solid #18191a
+    padding-top: 20px
+
+    .item-card
+        &__main
+            position: relative
+            background: #1d1e1f
+
+        &:before
+            content: ''
+            float: left
+            padding-top: 61.8%
+
+        &__date
+            margin: 6px 15px 0
+            font-size: rem(13px)
+            line-height: (20px / 13px)
+        &__description
+            margin: 20px 15px 20px
+            height: 145px
+
+        &__title
+            margin: 0 15px
+            color: #bdbebf
+            font-size: rem(14px)
+            line-height: (20px / 14px)
+
+        .has-line-clamp &
+            display: -webkit-box
+            -webkit-box-orient: vertical
+            -webkit-line-clamp: 2
+            white-space: normal
+            word-wrap: break-word
+
+        &__actions
+            padding: 0 10px
+            width: 100%
+
+//=====================================
+//  Layout: full
+//-------------------------------------
+.item-card--full
+    display: flex
+    margin-bottom: 20px
+    height: 220px
+    background: #1d1e1f

@@ -1,0 +1,21 @@
+<article class="item-card item-card--compact"
+         [@taskState]="task.state"
+         [ngClass]="(task.state == 'inactive') ? 'inactive' : 'animated'">
+
+    <div class="item-card__main">
+        <a class="item-card__date" >{{task.finishTo | date:"MM.dd.yy"}}</a>
+        <h1 class="item-card__title">{{task.title}}</h1>
+        <p class="item-card__description">{{task.description | formatString}}</p>
+        <div class="item-card__hr"></div>
+        <div class="item-card__actions">
+            <button class="cell" [routerLink]="'/task/' + task.id">
+                <mat-icon class="icon--small">edit</mat-icon>
+            </button>
+
+            <button class="cell" (click)="onRemove(task)">
+                <mat-icon class="icon--small">delete</mat-icon>
+            </button>
+        </div>
+    </div>
+</article>
+

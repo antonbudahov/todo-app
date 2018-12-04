@@ -1,0 +1,110 @@
+\:host
+    display: flex
+    flex-direction: column
+    flex: 1
+
+.mat-sidenav-container
+    //background: #1d1e1f
+    flex: 1
+    &.dark-them
+        //background: #262728
+
+.sidebar
+    padding: 20px
+    box-shadow: 3px 0 6px rgba(0,0,0,.24)
+    width: 280px
+    position: fixed
+    .logo
+        position: relative
+        padding: 15px 15px
+        z-index: 4
+        &__img
+            width: 30px
+            display: inline-block
+            max-height: 30px
+            margin-left: 10px
+            margin-right: 15px
+            img
+                width: 35px
+                top: 16px
+                position: absolute
+        &__text
+            text-transform: uppercase
+            padding: 5px 0
+            display: block
+            font-size: 18px
+            color: #3c4858
+            text-align: left
+            font-weight: 400
+            line-height: 30px
+            &:after
+                content: ""
+                position: absolute
+                bottom: 0
+                right: 10%
+                height: 1px
+                width: 80%
+                background-color: hsla(0,0%,71%,.3)
+    &__background
+        position: absolute
+        z-index: 1
+        height: 100%
+        width: 100%
+        display: block
+        top: 0
+        left: 0
+        background-size: cover
+        background-position: center center
+        &:after
+            position: absolute
+            z-index: 3
+            width: 100%
+            height: 100%
+            content: ""
+            display: block
+            background: #f5f5f5
+            opacity: .93
+    &__wrapper
+        position: relative
+        height: calc(100vh - 75px)
+        overflow: auto
+        z-index: 4
+.nav-link
+    color: rgba(0, 0, 0, 0.54)
+    display: flex
+    align-items: center
+    padding-top: 5px
+    padding-bottom: 5px
+
+mat-toolbar
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12)
+    z-index: 1
+
+mat-sidenav
+    box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24)
+    width: 200px
+
+.mat-sidenav-container
+    background: #f5f5f5
+    flex: 1
+
+
+
+.dashboard-card
+    max-width: 300px
+
+.toolbar-button
+    display: none
+
+.toolbar-button-row
+    display: flex
+    align-items: center
+    justify-content: space-around
+
+@media screen and (max-width: 1024px)
+    .toolbar-button
+        display: block
+    .toolbar-button-row
+        display: none
+
+

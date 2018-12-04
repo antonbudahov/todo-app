@@ -1,0 +1,32 @@
+
+<mat-sidenav-container class="example-container dark-them" autosize>
+    <mat-toolbar>
+        <button (click)="mainNav.toggle()" class="toolbar-button" mat-mini-fab>
+            <mat-icon>menu</mat-icon>
+        </button>
+    </mat-toolbar>
+    <mat-sidenav #mainNav class="sidebar" [opened]="screenWidth > 1024" [mode]="(screenWidth > 1024) ? 'side' : 'over'">
+        <div class="sidebar__wrapper">
+            <div class="logo">
+                <a class="logo__text">
+                    {{title}}
+                </a>
+            </div>
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="sidebar__background" style="background-image: url(../assets/img/sidebar-2.jpg)"></div>
+
+    </mat-sidenav>
+    <div class="example-sidenav-content">
+        <div class="dark-them app-content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+</mat-sidenav-container>
+
+
+
+
+
+

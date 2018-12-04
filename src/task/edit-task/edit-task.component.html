@@ -1,0 +1,58 @@
+<mat-grid-list cols="1" *ngIf="isLoaded && task">
+    <mat-card class="dashboard-card g-wrap">
+        <div class="card-header">
+            <h1>Редактирование задачи</h1>
+        </div>
+
+        <mat-card-content>
+            <form class="example-form">
+                <section class="example-section">
+                    <mat-checkbox
+                        mat-list-icon
+                        class="example-half-width"
+                        name="status"
+                        [checked]="task.status"
+                        [(ngModel)]="task.status">{{task.status ? 'Выполнено': 'Не Выполненно'}}
+                    </mat-checkbox>
+                    <mat-select
+                        placeholder="Выберите срочность"
+                        class="example-half-width"
+                        name="urgency" [(ngModel)]="urgencyList[task.urgency].name">
+                        <mat-option *ngFor="let item of urgencyList" [value]="item.name">{{item['name']}}</mat-option>
+                    </mat-select>
+                </section>
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Название" name="name" value="{{task.title}}" required
+                           pattern="[A-Za-z]{4,20}" [(ngModel)]="task.title">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput [ngModel]="task.finishTo | date:'yyyy-MM-dd'"
+                           (ngModelChange)="task.finishTo = $event" type="text" name="startDate"/>
+                </mat-form-field>
+
+
+                <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Описание задачи" name="descriptionTask"
+                              required [(ngModel)]="task.description"></textarea>
+                </mat-form-field>
+
+                <a mat-raised-button [color]="accent" (click)="save()">
+                    <mat-icon>check</mat-icon>
+                    Сохранить
+                </a> &nbsp;
+                <a mat-raised-button [color]="accent" (click)="goBack();">
+                    Назад
+                </a>
+
+            </form>
+        </mat-card-content>
+    </mat-card>
+
+</mat-grid-list>
+
+<mat-grid-list cols="1" *ngIf="!isLoaded">
+    <mat-card class="loading-card">
+        <img class="loading" src="./assets/images/loading.gif">
+    </mat-card>
+</mat-grid-list>
